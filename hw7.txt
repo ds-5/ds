@@ -1,0 +1,75 @@
+#3-1
+My first bicycle was a Trek.
+#3-2
+['honda', 'yamaha', 'suzuki', 'ducati']
+['honda', 'yamaha', 'suzuki']
+
+A Ducati is too expensive for me.
+#3-3
+Here is the original list:
+['bmw', 'audi', 'toyota', 'subaru']
+
+Here is the sorted list:
+['audi', 'bmw', 'subaru', 'toyota']
+
+Here is the reverse alphabetical list:
+['toyota', 'subaru', 'bmw', 'audi']
+
+Here is the original list again:
+['bmw', 'audi', 'toyota', 'subaru']
+#4-1
+Alice, that was a great trick!
+I can't wait to see your next trick, Alice
+
+David, that was a great trick!
+I can't wait to see your next trick, David
+
+Carolina, that was a great trick!
+I can't wait to see your next trick, Carolina
+
+Thank you everyone, that was a great magic show!
+#4-2
+[1, 2, 3, 4, 5]
+#4-3
+[2, 4, 6, 8, 10]
+#4-4
+[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+#4-5
+Here are the first three players on my team:
+Charles
+Martina
+Michael
+#4-6
+My favorite foods are:
+['pizza', 'falafel', 'carrot cake', 'cannoli']
+
+My friend's favorite foods are:
+['pizza', 'falafel', 'carrot cake', 'ice cream']
+#4-7
+Original dimensions:
+200
+50
+
+Modified dimensions:
+400
+100
+#5-1
+Audi
+BMW
+Subaru
+Toyota
+#5-2
+Adding mushrooms.
+Sorry, we don't have french fries.
+Adding extra cheese.
+
+Finished making your pizza!
+#5-3
+That is not the correct answer. Please try again!
+#5-4
+Marie, you can post a response if you wish.
+#5-5
+You are old enough to vote!
+Have you registered to vote yet?
+#5-6
+Your admission cost is $5.
