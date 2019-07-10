@@ -73,3 +73,77 @@ You are old enough to vote!
 Have you registered to vote yet?
 #5-6
 Your admission cost is $5.
+#6-1
+Original position: 0
+New position: 2
+#6-2
+Jen's favorite language is Python.
+Sarah's favorite language is C.
+Edward's favorite language is Ruby.
+Phil's favorite language is Python.
+#6-3
+
+Key: username
+Value: efermi
+
+Key: first
+Value: enrico
+
+Key: last
+Value: fermi
+#6-4
+{'color': 'yellow', 'points': 10, 'speed': 'medium'}
+{'color': 'yellow', 'points': 10, 'speed': 'medium'}
+{'color': 'yellow', 'points': 10, 'speed': 'medium'}
+{'color': 'green', 'points': 5, 'speed': 'slow'}
+{'color': 'green', 'points': 5, 'speed': 'slow'}
+...
+#6-5
+You ordered a thick-crust pizza with the following toppings:
+	mushrooms
+	extra cheese
+#6-6
+
+Username: aeinstein
+	Full name: Albert Einstein
+	Location: Princeton
+
+Username: mcurie
+	Full name: Marie Curie
+	Location: Paris
+#7-1
+
+Tell me something, and I will repeat it back to you:
+Enter 'quit' to end the program. 
+#7-2
+If you tell us who you are, we can personalize the messages you see.
+What is your first name? 
+#7-3
+How tall are you, in inches? 
+#7-4
+Enter a number, and I'll tell you if it's even or odd: 
+#7-5
+1
+2
+3
+4
+5
+#7-6
+
+Please tell me a city you have visited:
+(Enter 'quit' when you are finished.)
+#7-7
+Verifying user: Candace
+Verifying user: Brian
+Verifying user: Alice
+
+The following users have been confirmed:
+Candace
+Brian
+Alice
+#7-8
+['dog', 'cat', 'god', 'goldfish', 'cat', 'rabbit', 'cat']
+['dog', 'god', 'goldfish', 'rabbit']
+#7-9
+
+What is your name? 
