@@ -1,17 +1,16 @@
 def f1(n) :
-    #for i in range(n+1):
-    #    for j in range(1, i+1):
-    #        print(j, end=" ")
-    #    print("")
     for line in range(1, n+1):
         st=list(range(1, line+1))
         print(*st)
+    print()
+
 def f2(n) :
     for i in range(n):
         for j in range(1, i+2):
             print(int(j+(i*(i+1)/2)), end=" ")
         print("")
-
+    print()
+    
 def f3(n) :
     for i in range(2*n-1):
         if i<n : s_c = i+2
@@ -97,10 +96,8 @@ def f12(mat1, mat2) :
     return prod_mat
 
 def f13(mat):
-    #identity = "True"
     for r_i in range(len(mat)) :
         for c_i in range(len(mat[r_i])) :
-            #if (r_i == c_i and mat[r_i][c_i] != 1) or (r_i != c_i and mat[r_i][c_i] != 0) : identity = "False"
             if (r_i == c_i and mat[r_i][c_i] != 1) or (r_i != c_i and mat[r_i][c_i] != 0) : return False   
     return True
 
@@ -119,13 +116,3 @@ def f14(row, col):
             mat_sub.append(sum)
         mat.append(mat_sub)
     return mat
-        
-
-
-
-
-
-
-
-
-
