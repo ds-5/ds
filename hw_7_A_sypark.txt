@@ -2,213 +2,213 @@
 My first bicycle was a Trek.
 
 #3-2 motorcycles.py
-##['honda', 'yamaha', 'suzuki', 'ducati']
-##['honda', 'yamaha', 'suzuki']
+['honda', 'yamaha', 'suzuki', 'ducati']
+['honda', 'yamaha', 'suzuki']
 
-##A Ducati is too expensive for me.
+A Ducati is too expensive for me.
 
 #3-3 cars.py
-##Here is the original list:
-##['bmw', 'audi', 'toyota', 'subaru']
+Here is the original list:
+['bmw', 'audi', 'toyota', 'subaru']
 
-##Here is the sorted list: 
-##['audi', 'bmw', 'subaru', 'toyota']
+Here is the sorted list: 
+['audi', 'bmw', 'subaru', 'toyota']
 
-##Here is the reverse alphabetical list:
-##['toyota', 'subaru', 'bmw', 'audi']
+Here is the reverse alphabetical list:
+['toyota', 'subaru', 'bmw', 'audi']
 
-##Here is the original list again:
-##['bmw', 'audi', 'toyota', 'subaru']
+Here is the original list again:
+['bmw', 'audi', 'toyota', 'subaru']
 
 # 4-1 magicians.py
-##Alice,  that was a great trick!
-##I can't wait to see your next trick, Alice.
-##
-##David,  that was a great trick!
-##I can't wait to see your next trick, David.
-##
-##Carolina,  that was a great trick!
-##I can't wait to see your next trick, Carolina.
-##
-##Thank you everyone, that was a great magic show!
+Alice,  that was a great trick!
+I can't wait to see your next trick, Alice.
+
+David,  that was a great trick!
+I can't wait to see your next trick, David.
+
+Carolina,  that was a great trick!
+I can't wait to see your next trick, Carolina.
+
+Thank you everyone, that was a great magic show!
 
 # 4-2 numbers.py
 [1, 2, 3, 4, 5]
 
 # 4-3 even numbers.py
-##[2, 4, 6, 8, 10]
+[2, 4, 6, 8, 10]
 
 # 4-4 squares.py
-##[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 
 # 4-5 palyers.py
-##Here are the first three players on my team:
-##Charles
-##Martina
-##Michael
+Here are the first three players on my team:
+Charles
+Martina
+Michael
 
 # 4-6 foods.py
-##My favorite foods are:
-##['pizza', 'falafel', 'carrot cake', 'cannoli']
-##
-##My friend's favorite foods are:
-##['pizza', 'falafel', 'carrot cake', 'ice cream']
+My favorite foods are:
+['pizza', 'falafel', 'carrot cake', 'cannoli']
+
+My friend's favorite foods are:
+['pizza', 'falafel', 'carrot cake', 'ice cream']
 
 # 4-7 dimensions.py
-##Original dimensions:
-##200
-##50
-##
-##Modified dimensions:
-##400
-##100
+Original dimensions:
+200
+50
+
+Modified dimensions:
+400
+100
 
 # 5-1 cars.py
-##Audi
-##BMW
-##Subaru
-##Toyota
+Audi
+BMW
+Subaru
+Toyota
 
 # 5-2 toppings.py
-##Adding mushrooms.
-##Sorry, we don't have french fries.
-##Adding extra cheese.
+Adding mushrooms.
+Sorry, we don't have french fries.
+Adding extra cheese.
 
-##Finished making your pizza!
+Finished making your pizza!
 
 # 5-3 magic number.py
-##That is not the correct answer. Please try again!
+That is not the correct answer. Please try again!
 
 # 5-4 banned_users.py
-##Marie, you can post a response if you wish.
+Marie, you can post a response if you wish.
 
 # 5-5 voting.py
-##Sorry, you are too young to vote.
-##Please register to vote as soon as you turn 18!
+Sorry, you are too young to vote.
+Please register to vote as soon as you turn 18!
 
 # 5-6 amusement park.py
 Your admission cost is $5.
 Your admission cost is $5.
 
-=>¬˜¿Ã∞° æ¯¥Ÿ.√ππ¯¬∞ codeµµ ∏µÁ integer∏¶ ∆˜«‘«œ∞Ì ¿÷±‚ ∂ßπÆø°...
+=>Ï∞®Ïù¥Í∞Ä ÏóÜÎã§.Ï≤´Î≤àÏß∏ codeÎèÑ Î™®Îì† integerÎ•º Ìè¨Ìï®ÌïòÍ≥† ÏûàÍ∏∞ ÎïåÎ¨∏Ïóê...
 
 #6-1 alien.py
-##Original position: 0
-##New position: 2
+Original position: 0
+New position: 2
 
 # 6-2 favorite_languages.py
-##Jen's favorite language is Python.
-##Sarah's favorite language is C.
-##Edward's favorite language is Ruby.
-##Phil's favorite language is Python.
+Jen's favorite language is Python.
+Sarah's favorite language is C.
+Edward's favorite language is Ruby.
+Phil's favorite language is Python.
 
 # 6-3 user.py
 
-##Key: username
-##Value: efermi
-##
-##Key: first
-##Value: enrico
-##
-##Key: last
-##Value: fermi
+Key: username
+Value: efermi
+
+Key: first
+Value: enrico
+
+Key: last
+Value: fermi
 
 # 6-4 aliens.py
-##{'color': 'yellow', 'points': 10, 'speed': 'medium'}
-##{'color': 'yellow', 'points': 10, 'speed': 'medium'}
-##{'color': 'yellow', 'points': 10, 'speed': 'medium'}
-##{'color': 'green', 'points': 5, 'speed': 'slow'} 
-##{'color': 'green', 'points': 5, 'speed': 'slow'} 
+{'color': 'yellow', 'points': 10, 'speed': 'medium'}
+{'color': 'yellow', 'points': 10, 'speed': 'medium'}
+{'color': 'yellow', 'points': 10, 'speed': 'medium'}
+{'color': 'green', 'points': 5, 'speed': 'slow'} 
+{'color': 'green', 'points': 5, 'speed': 'slow'} 
 ...
 
 # 6-5 pizza.py
 
-##You ordered a thick-crust pizza with the following toppings:
-##	mushrooms
-##	extra cheese
+You ordered a thick-crust pizza with the following toppings:
+	mushrooms
+	extra cheese
 
 # 6-6 many_users.py
 
-##Username: aeinstein
-##	Full name: Albert einstein
-##	Location: Princeton
-##
-##Username: mcurie
-##	Full name: Marie curie
-##	Location: Paris
+Username: aeinstein
+	Full name: Albert einstein
+	Location: Princeton
+
+Username: mcurie
+	Full name: Marie curie
+	Location: Paris
 
 # 7-1 parrot.py
-##Tell me something, and I will repeat it back to you:
-##Enter 'quit' to end the program.a
-##a
-##
-##Tell me something, and I will repeat it back to you:
-##Enter 'quit' to end the program.quit
+Tell me something, and I will repeat it back to you:
+Enter 'quit' to end the program.a
+a
+
+Tell me something, and I will repeat it back to you:
+Enter 'quit' to end the program.quit
 
 # 7-2 greeter.py
-##If you tell us who you are, we can personalize the messages you see.
-##What is your first name?sun_young
-##
-##Hello, sun_young!
+If you tell us who you are, we can personalize the messages you see.
+What is your first name?sun_young
+
+Hello, sun_young!
 
 #7-3 rollercoaster.py
 1)
-##How tall are you, in inches?33
-##
-##you'll be able to ride when you're a little older.
-2)
-##How tall are you, in inches?36
+How tall are you, in inches?33
 
-##You're tall enough to ride!
+you'll be able to ride when you're a little older.
+2)
+How tall are you, in inches?36
+
+You're tall enough to ride!
 
 # 7-4 even or odd.py
 1)
-##Enter a number, and I'll tell you if it's even or odd: 3
-##
-##The number 3 is odd.
+Enter a number, and I'll tell you if it's even or odd: 3
+
+The number 3 is odd.
 2)
-##Enter a number, and I'll tell you if it's even or odd: 4
-##
-##The number 4 is even.
+Enter a number, and I'll tell you if it's even or odd: 4
+
+The number 4 is even.
 
 # 7-5 counting.py
-##1
-##2
-##3
-##4
-##5
+1
+2
+3
+4
+5
 
 # 7-6 cities.py
-##Please tell me a city you have visited:
-## (Enter 'quit' when you are finished.) usa
-##I'd love to go to Usa!
-##
-##Please tell me a city you have visited:
-## (Enter 'quit' when you are finished.) quit
+Please tell me a city you have visited:
+ (Enter 'quit' when you are finished.) usa
+I'd love to go to Usa!
+
+Please tell me a city you have visited:
+ (Enter 'quit' when you are finished.) quit
 
 # 7-7 confirmed_users.py
-##Verifying user: Candace
-##Verifying user: Brian
-##Verifying user: Alice
-##
-##The following users have been confirmed:
-##Candace
-##Brian
-##Alice
+Verifying user: Candace
+Verifying user: Brian
+Verifying user: Alice
+
+The following users have been confirmed:
+Candace
+Brian
+Alice
 
 # 7-8 pets.py
-##['dog', 'cat', 'dag', 'goldfish', 'cat', 'rabbit', 'cat'] 
-##['dog', 'dag', 'goldfish', 'rabbit'] 
+['dog', 'cat', 'dag', 'goldfish', 'cat', 'rabbit', 'cat'] 
+['dog', 'dag', 'goldfish', 'rabbit'] 
 
 # 7-9 mountain_poll.py
-##What is your name? park sun young
-##Which mountain would you like to climb someday? Hanrasan
-##Would you like to let another person respond? (yes/ no)yes
-##
-##What is your name? park eun young
-##Which mountain would you like to climb someday? Dongsan
-##Would you like to let another person respond? (yes/ no)no
-##
-##--- Poll Results ---
-##park sun young would like to climb Hanrasan.
-##park eun young would like to climb Dongsan.
+What is your name? park sun young
+Which mountain would you like to climb someday? Hanrasan
+Would you like to let another person respond? (yes/ no)yes
+
+What is your name? park eun young
+Which mountain would you like to climb someday? Dongsan
+Would you like to let another person respond? (yes/ no)no
+
+--- Poll Results ---
+park sun young would like to climb Hanrasan.
+park eun young would like to climb Dongsan.
