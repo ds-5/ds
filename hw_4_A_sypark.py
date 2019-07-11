@@ -26,15 +26,17 @@ def f5(i_list):
     return sqr
 
 def f6(i_list):
-    max = i_list[0]
-    for i in i_list :
-        if i > max : max = i
-    return max
+    if len(i_list) != 0:
+        max = i_list[0]
+        for i in i_list :
+            if i > max : max = i
+        return max
         
 def f7(i_list):
-    sum=0
-    for i in i_list:sum = sum+i
-    return sum/len(i_list)
+    if len(i_list) != 0:
+        sum=0
+        for i in i_list:sum = sum+i
+        return sum/len(i_list)
 
 def f8(a,b,n):
     for i in list(range(a,b+1)):
@@ -50,16 +52,16 @@ def f10(n):
         print(line)
 
 def f11(i_list):
-    desc="True"
+    desc=True
     for i in range(len(i_list)-1) :
-        if i_list[i] <= i_list[i+1] : desc = "False"
+        if i_list[i] <= i_list[i+1] : desc = False
     return desc
 
 def f12(i_list):
-    desc="True"
+    res = True
     for i in range(len(i_list)) :
-        if i_list[i] >= 0 : desc = "False"
-    return desc
+        if i_list[i] >= 0 : res = False
+    return res
 
 def f13(i_list, i_tar):
     find = -1
@@ -102,11 +104,11 @@ def f19(i_list):
         for n in range(i) :fac = fac*(n+1)
         print (fac)
 
-def f20(i_list):
-    for i in i_list :
-        for n in range(i+1) : print(i-n, end = " ")
-        print("")
-
+def f20(i_list): 
+    for i in i_list : 
+        for n in range(i+1) : print(i-n, end = " ") 
+        print()
+    print()
 
 def f21(i1_l, i2_l):
     s_l = []
