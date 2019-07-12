@@ -105,9 +105,10 @@ def f19(i_list):
         print (fac)
 
 def f20(i_list): 
-    for i in i_list : 
-        for n in range(i+1) : print(i-n, end = " ") 
-        print()
+    for i in i_list :
+        line = []
+        for n in range(i+1) : line.append(n)
+        print(*line) 
     print()
 
 def f21(i1_l, i2_l):
@@ -146,7 +147,7 @@ def f24(values):
         
 
 def f25(n):
-    return str(n)[0]
+    return n//10**(len(str(n))-1)
 
 
 def f26(i_list):
