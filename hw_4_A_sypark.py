@@ -107,7 +107,7 @@ def f19(i_list):
 def f20(i_list): 
     for i in i_list :
         line = []
-        for n in range(i+1) : line.append(n)
+        for n in range(i, -1, -1) : line.append(n)
         print(*line) 
     print()
 
