@@ -140,7 +140,7 @@ def f24(values):
             max_i = i
     new_values = values[:max_i]+values[max_i+1:]
     max_v = new_values[0]
-        for i in range(len(new_values)):
+    for i in range(len(new_values)):
         if max_v < new_values[i] : max_v = new_values[i]
 
     return max_v
