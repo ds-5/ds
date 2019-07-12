@@ -1,0 +1,147 @@
+================= RESTART: C:/Users/user/Desktop/hw7_cny.py =================
+My first bicycle was a Trek.
+['honda', 'yamaha', 'suzuki', 'ducati']
+['honda', 'yamaha', 'suzuki']
+
+A Ducati is too expensive for me.
+Here is the original list:
+['bmw', 'audi', 'toyota', 'subaru']
+
+Here is the sorted list:
+['audi', 'bmw', 'subaru', 'toyota']
+Here is the reverse alphabettical list:
+['toyota', 'subaru', 'bmw', 'audi']
+
+Here is the original list again:
+['bmw', 'audi', 'toyota', 'subaru']
+Alice, that was a great trick:
+I can't wait to see your next trick, Alice.
+
+David, that was a great trick:
+I can't wait to see your next trick, David.
+
+Carolina, that was a great trick:
+I can't wait to see your next trick, Carolina.
+
+Thank you everyone, that was a great magic show!
+[1, 2, 3, 4, 5]
+[2, 4, 6, 8, 10]
+[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+Heare are the first three players on my team:
+Charles
+Martina
+Michael
+My favorite foods are:
+['pizza', 'falafel', 'carrot cake', 'cannoli']
+
+My friend's favorite foods are:
+['pizza', 'falafel', 'carrot cake', 'ice cream']
+Original dimensions:
+200
+50
+
+Modified dimensions:
+400
+100
+Audi
+BMW
+Subaru
+Toyota
+Sorry, we don't hanve mushroos.
+Sorry, we don't hanve french fries.
+Adding extra cheese.
+
+Finished making your pizza!
+That is not the correct answer. Please try again!
+Marie, you can post a response if you wish.
+Sorry, you are too young to vote.
+Please register to vote as soon as you turn 18!
+Your admission cost is $5.
+Your admission cost is $5.
+Original position: 0
+New postition: 2
+Jen's favorite language is Python.
+Sarah's favorite language is C.
+Edward's favorite language is Ruby.
+Phil's favorite language is Python.
+
+Key: username
+Value; efermi
+
+Key: first
+Value; enrico
+
+Key: last
+Value; fermi
+{'color': 'yellow', 'points': 10, 'speed': 'medium'}
+{'color': 'yellow', 'points': 10, 'speed': 'medium'}
+{'color': 'yellow', 'points': 10, 'speed': 'medium'}
+{'color': 'green', 'points': 5, 'speed': 'slow'}
+{'color': 'green', 'points': 5, 'speed': 'slow'}
+...
+You ordered a thick-crust pizza with the following toppings:
+	mushrooms
+	extra cheese
+
+Username: aeinstein
+	Full name: Albert Einstein
+	Location: Princeton
+
+Username: mcurie
+	Full name: Marie Curie
+	Location: Paris
+
+Tell me something, and I will repeat it back to you: 
+Enter 'quit' to end the program. hahaha
+hahaha
+
+Tell me something, and I will repeat it back to you: 
+Enter 'quit' to end the program. quit
+If you tell us who you are, we can personalize the messages you see.
+What is your first name? nam young
+
+Hello, nam young!
+How tall are you, in inches? 32
+
+You'll be able to ride when you're a little older.
+Enter a number, and I'll tell you if it's even or odd: 123445
+
+The number 123445 is odd.
+1
+2
+3
+4
+5
+
+Please tell me a city you have visied:
+(Enter 'quit' when you are finished.) japen
+I'd love to go to Japen!
+
+Please tell me a city you have visied:
+(Enter 'quit' when you are finished.) china
+I'd love to go to China!
+
+Please tell me a city you have visied:
+(Enter 'quit' when you are finished.) quit
+Verifying user: Candace
+Verifying user: Alice
+Verifying user: Brian
+
+The following users have been confirmed: 
+Candace
+Alice
+Brian
+['dog', 'cat', 'dog', 'goldfish', 'cat', 'rabbit', 'cat']
+['dog', 'dog', 'goldfish', 'rabbit']
+
+What is your name? cho nam young
+Which mountain would you like to climb someday? rocky
+Would you like to let another person respond? (yes/ no) yes
+
+What is your name? cho nam young
+Which mountain would you like to climb someday? baekdo
+Would you like to let another person respond? (yes/ no) no
+
+--- Poll Results ---
+cho nam young would like to climb baekdo.
+>>> 
