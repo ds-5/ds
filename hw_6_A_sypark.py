@@ -6,31 +6,29 @@ def f1(n) :
 
 def f2(n) :
     for i in range(n):
-        for j in range(1, i+2):
-            print(int(j+(i*(i+1)/2)), end=" ")
-        print("")
+        st = []
+        for j in range(1, i+2):st.append(int(j+(i*(i+1)/2)))
+        print(*st)
     print()
     
 def f3(n) :
     for i in range(2*n-1):
         if i<n : s_c = i+2
         else : s_c = 2*n-i
-        for j in range(1, s_c):
-            print(int(j+((s_c-2)*(s_c-2+1)/2)), end=" ")
-        print("")
+        st = []
+        for j in range(1, s_c):st.append(int(j+((s_c-2)*(s_c-2+1)/2)))
+        print(*st)
 
 def f4(n) :
     for i in range(2*n-1):
+        st = []
         if i<n :
             s_c = i+2
-            for j in range(1, s_c):
-                print(int(j+((s_c-2)*(s_c-2+1)/2)), end=" ")
-            print("")
+            for j in range(1, s_c):st.append(int(j+((s_c-2)*(s_c-2+1)/2)))
         else :
             s_c = 2*n-i
-            for j in range(1, s_c):
-                print(int(j+ (n**2)-((s_c-1)*(s_c))/2), end=" ")
-            print("")
+            for j in range(1, s_c):st.append(int(j+ (n**2)-((s_c-1)*(s_c))/2))
+        print(*st)
 
 def f5(mat):
     for r in mat :
@@ -67,9 +65,11 @@ def f9(mat):
 
 def f10(mat):
     for r in mat :
+        st = []
         for c in r :
-            if c%2 == 1 : print(c, end=" ")
-        print("")
+            if c%2 == 1 : st.append(c)
+        print(*st)
+    print()
 
 
 def f11(mat1, mat2) :
