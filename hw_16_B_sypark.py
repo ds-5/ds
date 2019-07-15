@@ -26,19 +26,12 @@ def is_reverse(string1, string2):
 
 
 def sort_repeated(L) :
-    re_el = []
-    new_el = []
+    re_el = set()
+    new_el = set()
     for el in L :
-        if el not in new_el : new_el.append(el)
-        else :
-            if el not in re_el : re_el.append(el)
-    for min in range(len(re_el)):
-        min_index = min
-        for i in range(min+1, len(re_el)):
-            if re_el[min_index] > re_el[i] : min_index = i
-        re_el[min_index], re_el[min] = re_el[min], re_el[min_index]
-    return re_el
-
+        if el in new_el: re_el.add(el)
+        new_el.add(el)
+    return sorted(re_el)
 
 def make_Dict_number(lst) :
     make_dic = {}
