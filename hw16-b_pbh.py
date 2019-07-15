@@ -6,17 +6,20 @@ def count_matches(l,v):
         return 1 + count_matches(l[1:],v)
     else:
         return count_matches(l[1:], v)
+
 #2
 def double_each(l):
     if not l:
         return []
     return [l[0]]*2 + double_each(l[1:])
+
 #3
 def sums_to(l, k):
     if not l:
         if k == 0: return True
         else: return False
     return sums_to( l[1:] , k-l[0])
+
 #4
 def is_reverse(s1,s2):
     if (not s1 and s2) or (s1 and not s2):
@@ -43,10 +46,8 @@ def sort_repeated(l):
             l2.append(l[i])
             buf = l[i]
     return l2
-
-#print( sort_repeated([1,2,3,2,1]) )
-#print( sort_repeated([1,2,3,2,2,4]) )
-#print( sort_repeated(list(range(100))) )
+#def sort_repeated_short(l):
+#    return sorted([x for x in set(l) if l.count(x) > 1])
 
 #6-a
 def make_Dict_number(l):
@@ -88,3 +89,6 @@ def histogram(d):
     for e in d.values():
         d2[e] = list(d.values()).count(e)
     return d2
+#def histogram_short(d):
+#    return {v:list(d.values()).count(v) for v in d.values()}
+
