@@ -39,49 +39,54 @@ def run(func, args, log_file):
     return r
 
 # def 개수 검사
-m1, m2 = getmembers(s1), getmembers(s2)
-if len(m1) != len(m2):
-    print('[ERROR] function count = %d, %d' % (len(m1), len(m2)))
-    sys.exit()
+mb1, mb2 = getmembers(s1), getmembers(s2)
+if len(mb1) != len(mb2):
+    print('[ERROR] function count = %d, %d\n\n\n' % (len(mb1), len(mb2)))
+    #sys.exit()
+# 멤버 중 공통 함수 추출하기
+func_list_a, func_list_b = set([e[0] for e in mb1]), set([e[0] for e in mb2])
+common = func_list_a.intersection(func_list_b)
+m1 = [e for e in mb1 if isfunction(e[1]) and e[0] in common]
+m2 = [e for e in mb2 if isfunction(e[1]) and e[0] in common]
 
 # def 결과 검사
 HW = {
-    # HW4 TEST
-    # ERROR
-        # f11 : 같은 값일 때 내림 정렬인가? (True / False)
-        # f20 : def2 line 마지막 공백?
-        # f25 : def 문자 반환?
-    #'dim1': ['f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7', 'f12', 'f15', 'f17', 'f19'], #pass #'dim1': ['f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7', 'f11', 'f12', 'f15', 'f17', 'f19', 'f20'],
-    #'dim1_asm_neg_var1' : ['f14'],             #pass
-    #'dim1_asm_var2' : ['f24'],             #pass
-    #'dim2_asm_not_empty': ['f26'],          #pass
-    #'dim2_asm_not_empty_start' : ['f23'],   #pass
-    #'dim1_dim1_asm_same_length': ['f21'],   #pass
-    #'dim1_num1': ['f13'],                   #pass
-    #'num1': ['f10', 'f16', 'f18', 'f22'], #pass #'num1': ['f10', 'f16', 'f18', 'f22', 'f25'],
-    #'num2': ['f9'],                        #pass
-    #'num3_asm_3rd_pos': ['f8'],            #pass
+    # HW10 TEST
 
-    #HW6 TEST
-    #ERROR
-        # f1 : def2 에서 newline 포함.
-        # f2,f3,f4,f10 : def2 에서 line 마지막 space
-    #'num1' : ['f1','f2','f3','f4'],
-    #'num2' : ['f14'],   #pass
-    'dim2' : ['f5','f7','f8','f9','f10'],
-    #'dim2_square' : ['f6','f13'],   #pass
-    #'dim2_dim_2_same' : ['f11'],   #pass
-    #'dim2_c_eq_r' : ['f12'],       #pass
+    # WARNING
+        # f2 = 1보다 작은 경우 무한 루프(pbh, sypark)
+        # f12 = 음수일 경우 무한 루프(sypark)
+        # f13 = -1 일 경우 무한 루프(sypark)
+    # ERROR
+        # f8 = slice 틀림 (sypark)
+        # f17 = 개수 세는 프로그램? (sypark)
+    # EXCEPTION
+        # f6 : 불규칙적인 list 형태
+
+    # CASE
+    #'dim1':['f1','f3','f4','f5','f10','f11','f14','f15','f16','f20'],
+    #'dim1_len_over_1':['f17'],
+    #'dim1_dim1_sorted':['f19'],
+    #'num1_over_0':['f2'],
+    #'num1_pos':['f9','f12','f13'],
+    'num1_pos_max_25':['f7'],
+    #'num2_pos':['f18'],
+    #'str1':['f8'],
 }
 
 cnt = [0, 0, 0]
 for f1, f2 in sorted(zip(m1, m2)):
-    if isfunction(f1[1]):
+    #print(f1[0],f2[0])
+    if 1:
         cnt[0] += 1
         test_case = []
         for k, v in HW.items():
             if f1[0] in v and k == 'dim1':
                 for i in range(1000): test_case.append([dim_1()])
+            if f1[0] in v and k == 'dim1_len_over_1':
+                for i in range(1000):
+                    generated = dim_1()
+                    if len(generated) > 1 : test_case.append([generated])
             elif f1[0] in v and k == 'dim1_num1':
                 for i in range(1000): test_case.append([dim_1(size=(1,10)), random.randint(-100,100)])
             elif f1[0] in v and k == 'dim1_asm_var2':
@@ -91,6 +96,9 @@ for f1, f2 in sorted(zip(m1, m2)):
             elif f1[0] in v and k == 'dim1_dim1_asm_same_length':
                 length = random.randint(0,10)
                 for i in range(1000): test_case.append([dim_1(size=(length,length)),dim_1(size=(length,length))])
+            elif f1[0] in v and k == 'dim1_dim1_sorted':
+                for i in range(1000):
+                    test_case.append([sorted(dim_1()),sorted(dim_1())])
             elif f1[0] in v and k == 'dim2_square':
                 length = random.randint(0,10)
                 for i in range(1000): test_case.append([dim_2(row=(length,length),col=(length,length))])
@@ -110,22 +118,44 @@ for f1, f2 in sorted(zip(m1, m2)):
             elif f1[0] in v and k == 'dim2_asm_not_empty_start':
                 for i in range(1000): test_case.append([dim_2(row=(1,10),col=(0,10),empty_start=0)])
             elif f1[0] in v and k == 'num1':
-                for i in range(1000): test_case.append([random.randint(-100, 100)])
+                for i in range(1000):
+                    test_case.append([random.randint(-500, 500)])
+            elif f1[0] in v and k == 'num1_over_0':
+                for i in range(1000):
+                    test_case.append([random.randint(1, 100_000)])
+            elif f1[0] in v and k == 'num1_pos':
+                for i in range(1000):
+                        test_case.append([random.randint(0, 200)])
+            elif f1[0] in v and k == 'num1_pos_max_25':
+                for i in range(25):
+                        test_case.append([i])
+            elif f1[0] in v and k == 'str1':
+                for i in range(1000): #test_case.append([random.randint(-100000, 100000)])
+                    string = ''
+                    for _ in range(random.randint(0,20)):
+                        string += chr(random.randint(97,122)) # lower alphabet
+                    test_case.append([string])
             elif f1[0] in v and k == 'num2':
                 for i in range(1000): test_case.append([random.randint(-100, 100),random.randint(-100, 100)])
+            elif f1[0] in v and k == 'num2_pos':
+                for i in range(1000): test_case.append([random.randint(1, 100),random.randint(1, 100)])
             elif f1[0] in v and k == 'num3_asm_3rd_pos':
                 for i in range(1000): test_case.append([random.randint(-100, 100),random.randint(-100, 100),random.randint(1, 100)])
 
 
         if not test_case :
-            print('skip! {}'.format(f1[0]))
+            print('skip! ----------------> {}'.format(f1[0]))
             cnt[2] += 1
             continue
 
         for test_no, args in enumerate(test_case) :
             #  def 수행
             log1, log2 = 'tmp1.txt', 'tmp2.txt'
-            r1, r2 = run(f1, args, log1), run(f2, args, log2)
+            try :
+                r1, r2 = run(f1, args, log1), run(f2, args, log2)
+            except :
+                print('ERROR ARGS =', args, f1, f2)
+                sys.exit()
 
             # def 판정
             if r1 != r2:
