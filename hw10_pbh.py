@@ -132,7 +132,7 @@ def f18(a,b):
     if b>a :
         a, b = b, a
     if a%b :
-        return f18(a,a%b)
+        return f18(b,a%b)
     else:
         return b
 
