@@ -36,12 +36,11 @@ def f7(n):
     else : return f7(n-1)+f7(n-2)
 
 def f8(s):
-    chk = True
     if s != "" :
         if len(s) != 1 :
-            if s[0] != s[-1] : chk = False
-            else : f8(s[1:-2])
-    return chk
+            if s[0] != s[-1] : return False
+            else : return f8(s[1:-1])
+    return True
 
 def f9(n):
     if n == 0 : return 1
