@@ -128,11 +128,11 @@ print( c.perimeter() )
 
 class InsideDoubleSquare(Square):
     def __init__( self, x = 0 ):
-        self.outterSqure = Square( x  )
+        self.outerSqure = Square( x  )
         self.innerSqure = Square( x / 2 )
 
 c = InsideDoubleSquare(20)
-print( c.outterSqure.area() )
+print( c.outerSqure.area() )
 print( c.innerSqure.area() )
 
 
