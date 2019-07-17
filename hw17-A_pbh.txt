@@ -1,0 +1,73 @@
+#### 1. Animal and Dog
+<결과>
+Animal created
+Dog created
+Dog
+Eating
+
+<설명>
+Animal 을 상속받은 Dog 의 객체를 생성할 때,
+Dog.__init__() 내의 super 구문에 의해 super class 의 __init__ 메소드 먼저 수행되고
+"Dog created" 가 출력된다. 이후 상속받은 eat() 메소드와 Dog 에서 정의한 bark() 메소드가
+차례로 수행된다.
+
+
+#### 2. Circle
+<코드>
+class Circle():
+    pi = 3.141592
+    def __init__(self):
+        self.radius = 0
+    def area(self):
+        return self.pi * (self.radius ** 2)
+    def setRadius(self, r):
+        self.radius = r
+    def getRadius(self):
+        return self.radius
+      
+<결과>
+5
+78.5398
+
+<설명>
+init 에서는 유일한 변수 radius 를 초기화한다.
+getRadius는 radius 를 리턴하고,
+area 는 현재 radius 기준의 원의 넓이를 리턴한다.
+
+
+#### 3. Shape and Others
+<결과>
+4500
+290
+1125.0
+
+<설명>
+객체 생성 시, 반드시 x와 y 값을 받아야 하며 멤버 변수를 입력 값으로 초기화한다.
+현재 멤버변수 x,y를 기준으로 area 는 넓이를, perimeter 는 둘레를 리턴한다.
+describe는 description 을, authorName 은 author 를 리턴한다.
+scaleSize 는 멤버변수 x, y를 scale 만큼 곱하여 변경한다.
+
+<코드>
+class Square(Shape):
+    ''
+
+class DoubleSquare(Square):
+    def area(self):
+        return 2 * self.x * self.y
+    def perimeter(self):
+        return 4 * self.x + 2 * self.y
+        
+class InsideDoubleSquare(Square):
+    def area(self):
+        return 0.25 * self.x * self.y
+    def perimeter(self):
+        return self.x + self.y
+
+
+<코드 설명>
+Square 의 경우 Shape 와 차이가 없으므로, 상속만 받는다.
+  __init__ 역시 동일하므로 오버라이딩 할 필요가 없다.
+DoubleSquare 는 사각형 하나의 x,y 를 받아서 2개의 Square의 area 및 perimeter 를 반환하고 싶으므로
+  init()은 동일하게 두고, area() 와 perimeter() 만 도형에 알맞게 오버라이딩한다.
+InsideDoubleSquare 역시 DoubleSquare 와 동일하게 square 의 x,y 정보를 토대로 area(), perimeter()만
+  오버라이딩한다.
