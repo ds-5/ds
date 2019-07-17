@@ -57,7 +57,7 @@ def f11(i_list):
     else : return f11(i_list[1:])
 
 def f12(n):
-    if n == 0 : return
+    if n <= 0 : return
     else :
         print(n)
         return f12(n-1)
@@ -85,8 +85,8 @@ def f16(i_list):
         else : return (f16(i_list[1:]))
 
 def f17(i_list):
-    if len(i_list) == 0 : return -1
-    else : return f17(i_list[1:])+1
+    if len(i_list) == 2 : return i_list[0]
+    else : return f17(i_list[1:])
     
 def f18(a,b):
     if a>b :
