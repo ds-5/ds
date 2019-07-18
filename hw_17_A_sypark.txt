@@ -1,0 +1,59 @@
+#Simple OOP Project(1): Animal and Dog
+
+=>code설명
+Dog라는 class가 Animal의 class의 모든 메소드를 상속받는다.
+d에 Dog를 naming하고 Dog class에 super init에 의해서 Animal class의 init method를 상속받아 Animal initial method에 있는 print와 Dog initial method의 print가 함께 실행된다.
+Dog가 Animal의 모든 method를 상속 받았지만 Dog class가 whoAmI라는 method를 override하므로 Dog class의 whoAmI의 method가 실행된다.
+eat라는 method는 Dog class에는 없지만 Animal class에서 상속받은 method이므로 실행된다.
+bark method는 Dog class 자체에서 선언된 method이므로 이므로 실행된다.
+
+=>code 결과
+Animal created
+Dog created
+Dog
+Eating
+Woof!
+================================
+#Simple OOP Project (2):   Circle
+
+5
+78.5398
+=================================
+#Simple OOP Project (3):   Shape and Others 
+
+=> Code 설명 
+Shape class를 naming할 때 가로(x)와 세로(y) 값을 argument로 받는다.
+area method는 입력으로 받은 x,y 값으로 넓이를 반환한다.
+perimter method는 입력으로 받은 x,y 값으로 둘레길이를 반환한다.
+describe method는 description 이라는 instance variable값을 입력받은 text로 update한다. 
+authorName method는 author 이라는 instance variable값을 입력받은 text로 update한다.
+scaleSize method는 입력받은 scale배로 x,y의 값을 update한다.
+=================================
+#Simple OOP Project (3):   Shape and Others  [1/3] 
+
+4500
+9000
+1125.0
+=================================
+#Simple OOP Project (3):   Shape and Others  [2/2] 
+
+class Square(Shape) :
+    def __init__(self, x):
+        super().__init__(x, x)
+
+class DoubleSquare(Square) :
+    def __init__(self, x):
+        Square.__init__(self, x)
+        Square.scaleSize(self, 2)
+        self.x = x
+=================================
+#Simple OOP Project (3):   Shape and Others 
+
+class InsideDoubleSquare(Square) :
+    def __init__(self, x):
+        Square.__init__(self, x)
+
+    def inside_square_area(self):
+        Square.scaleSize(self, 0.5)
+        return self.x*self.x
+=================================
