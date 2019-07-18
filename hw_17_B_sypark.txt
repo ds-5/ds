@@ -1,0 +1,96 @@
+#8-1 greeter.py
+Hello, Jesse!
+=================================
+#8-2 pets.py
+
+I have a dog.
+My dog's name is Willie.
+
+I have a dog.
+My dog's name is Willie.
+
+I have a hamster.
+My hamster's name is Harry.
+
+I have a hamster.
+My hamster's name is Harry.
+
+I have a hamster.
+My hamster's name is Harry.
+=================================
+#8-3 formatted_name.py
+Jimi Hendrix
+John Lee Hooker
+=================================
+#8-4 peson.py
+{'first': 'jimi', 'last': 'hendrix', 'age': 27}
+=================================
+#8-5 greet_users.py
+Hello, Hannah!
+Hello, Ty!
+Hello, Margot!
+=================================
+#8-6 printing_models.py
+Printing model: dodecahedron
+Printing model: robot pendant
+Printing model: iphone case
+
+The following models have been printed:
+dodecahedron
+robot pendant
+iphone case
+=================================
+#8-7 pizza.py
+
+Making a 16-inch pizza with the following toppings:
+- pepperoni
+
+Making a 12-inch pizza with the following toppings:
+- mushrooms
+- green peppers
+- extra cheese
+=================================
+#8-8 user prfile.py
+{'first_name': 'albert', 'last_name': 'einstein', 'location': 'princeton', 'field': 'physics'}
+=================================
+#8-9 making_pizza.py
+
+Making a 16-inch pizza with the following toppings:
+- pepperoni
+
+Making a 12-inch pizza with the following toppings:
+- mushrooms
+- green peppers
+- extra cheese
+=================================
+#9-1 dog.py
+My dog's name is Willie.
+My dog is 6 years old.
+Willie is now sitting.
+
+My dog's name is Lucy.
+My dog is 3 years old.
+Lucy is now sitting.
+=================================
+#9-2 car.py
+2013 Subaru Outback
+This car has 23500 miles on it.
+This car has 23600 miles on it.
+=================================
+#9-3 electric_car.py
+2016 Tesla Model S 
+This car has a 60-kWh battery.
+=================================
+#9-4 my_car.py
+2015 Audi A4
+This car has 23 miles on it.
+=================================
+#9-5 my_car.py
+2015 Volkswagen Bettle
+2015 Tesla Roadster
+=================================
+#9-6 favorite_languages.py
+Jen's favorite language is Python.
+Sarah's favorite language is C.
+Edward's favorite language is Ruby.
+Phil's favorite language is Python.
