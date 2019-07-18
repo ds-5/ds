@@ -1,19 +1,40 @@
-#### 1. Animal and Dog
-<결과>
+#17-A-1. Animal and Dog
+
+class Animal:
+    def __init__(self):
+        print("Animal created")
+    def whoAmI(self):
+        print("Animal")
+    def eat(self):
+        print("Eating")
+
+class Dog(Animal):
+    def __init__(self):
+        super().__init__()
+        print("Dog created")
+    def whoAmI(self):
+        print("Dog")
+    def bark(self):
+        print("Woof!")
+d = Dog()
+d.whoAmI()
+d.eat()
+d.bark()
+
+'''
+결과>
 Animal created
 Dog created
 Dog
 Eating
 
-<설명>
+설명>
 Animal 을 상속받은 Dog 의 객체를 생성할 때,
 Dog.__init__() 내의 super 구문에 의해 super class 의 __init__ 메소드 먼저 수행되고
 "Dog created" 가 출력된다. 이후 상속받은 eat() 메소드와 Dog 에서 정의한 bark() 메소드가
 차례로 수행된다.
-
-
-#### 2. Circle
-<코드>
+'''
+#17-A-2.Circle
 class Circle():
     pi = 3.141592
     def __init__(self):
@@ -24,7 +45,12 @@ class Circle():
         self.radius = r
     def getRadius(self):
         return self.radius
-      
+c = Circle()
+c.setRadius(5)
+print(c.getRadius())
+print(c.area())
+
+'''
 <결과>
 5
 78.5398
@@ -33,9 +59,36 @@ class Circle():
 init 에서는 유일한 변수 radius 를 초기화한다.
 getRadius는 radius 를 리턴하고,
 area 는 현재 radius 기준의 원의 넓이를 리턴한다.
+'''
 
+#17-A-3. Shape and Others
+class Shape:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        self.description = "This shape has not been described yet"
+        self.author = "Nobody has claimed to make this shape yet"
+    def area(self):
+        return self.x * self.y
+    def perimeter(self):
+        return 2 * self.x + 2 * self.y
+    def describe(self, text):
+        self.description = text
+    def authorName(self, text):
+        self.author = text
+    def scaleSize(self, scale):
+        self.x = self.x * scale
+        self.y = self.y * scale
 
-#### 3. Shape and Others
+rectangle = Shape(100,45)
+print(rectangle.area()) #4500
+print(rectangle.perimeter()) #290
+rectangle.describe("A wide rectangle, more than twice\
+    as wide as it is tall")
+rectangle.scaleSize(0.5)
+print(rectangle.area()) #1125.0
+
+'''
 <결과>
 4500
 290
@@ -46,24 +99,24 @@ area 는 현재 radius 기준의 원의 넓이를 리턴한다.
 현재 멤버변수 x,y를 기준으로 area 는 넓이를, perimeter 는 둘레를 리턴한다.
 describe는 description 을, authorName 은 author 를 리턴한다.
 scaleSize 는 멤버변수 x, y를 scale 만큼 곱하여 변경한다.
+'''
 
-<코드>
+#17-A-3-2
 class Square(Shape):
     ''
 
-class DoubleSquare(Square):
+class DoubleSquare(Shape):
     def area(self):
         return 2 * self.x * self.y
     def perimeter(self):
         return 4 * self.x + 2 * self.y
-        
+
 class InsideDoubleSquare(Square):
     def area(self):
         return 0.25 * self.x * self.y
     def perimeter(self):
         return self.x + self.y
-
-
+'''
 <코드 설명>
 Square 의 경우 Shape 와 차이가 없으므로, 상속만 받는다.
   __init__ 역시 동일하므로 오버라이딩 할 필요가 없다.
@@ -71,3 +124,392 @@ DoubleSquare 는 사각형 하나의 x,y 를 받아서 2개의 Square의 area �
   init()은 동일하게 두고, area() 와 perimeter() 만 도형에 알맞게 오버라이딩한다.
 InsideDoubleSquare 역시 DoubleSquare 와 동일하게 square 의 x,y 정보를 토대로 area(), perimeter()만
   오버라이딩한다.
+'''
+
+
+
+
+
+#17-B-1. Functions[1/7]
+def greet_user(username):
+    print("Hello, " + username.title() + "!")
+
+greet_user('jesse')
+'''
+<결과>
+Hello, Jesse!
+<설명>
+정해진 구문에 입력된 username 의 첫번째 문자를 대분자로 변환하여 대입하고 출력한다.
+'''
+
+
+def describe_pet(pet_name, animal_type='dog'):
+    print("\nI have a " + animal_type + ".")
+    print("My " + animal_type + "'s name is " + pet_name.title() + ".")
+
+describe_pet('willie')
+describe_pet(pet_name='willie')
+describe_pet('harry', 'hamster')
+describe_pet(pet_name='harry', animal_type='hamster')
+describe_pet(animal_type='hamster', pet_name='harry')
+
+'''
+<결과>
+
+I have a dog.
+My dog's name is Willie.
+
+I have a dog.
+My dog's name is Willie.
+
+I have a hamster.
+My hamster's name is Harry.
+
+I have a hamster.
+My hamster's name is Harry.
+
+I have a hamster.
+My hamster's name is Harry.
+
+<설명>
+pet_name 의 첫글자를 대문자로 바꾸고, animal_type 은 입력하지 않으면 default 를 'dog'로 하여
+정해진 문자열에 대입하고 출력한다. 
+'''
+
+#17-B-2. Functions[2/7]
+def get_formatted_name(first_name, last_name, middle_name=''):
+    if middle_name:
+        full_name = first_name + ' ' + middle_name + ' ' + last_name
+    else:
+        full_name = first_name + ' ' + last_name
+    return full_name.title()
+
+musician = get_formatted_name('jimi', 'hendrix')
+print(musician)
+musician = get_formatted_name('john', 'hooker', 'lee')
+print(musician)
+'''
+<결과>
+Jimi Hendrix
+John Lee Hooker
+<설명>
+first_name, last_name, middle_name 의 첫번째 문자를 대문자로 바꾸고, 이를  공백으로 구분하여 출력한다.
+middle_name 이 없을 경우는 생략하는데, 에러가 발생하지 않게 default 를 ''으로 처리하였다. 
+'''
+
+#17-B-3. Functions[3/7]
+def build_person(first_name, last_name, age=''):
+    person={'first':first_name, 'last':last_name}
+    if age:
+        person['age'] = age
+    return person
+
+musician = build_person('jimi', 'hendrix', age=27)
+print(musician)
+
+'''
+<결과>
+{'first': 'jimi', 'last': 'hendrix', 'age': 27}
+
+<설명>
+dictionary type 의 first key 에 first_name, last key 에 last_name 을 저장하고,
+age key 는 입력이 있으면 age, 없으면 '' 으로 저장한다. 
+'''
+
+def greet_users(names):
+    for name in names:
+        msg = "Hello, " + name.title() + "!"
+        print(msg)
+
+usernames = ['hannah', 'ty', 'margot']
+greet_users(usernames)
+
+'''
+<결과>
+Hello, Hannah!
+Hello, Ty!
+Hello, Margot!
+<설명>
+list 에 있는 원소들을 하나씩 꺼내어 첫글자 대문자 처리하고, 지정된 문자열 조합하여 출력.
+'''
+
+#17-B-4
+def print_models(unprinted_designs, completed_models):
+    while unprinted_designs:
+        current_design = unprinted_designs.pop()
+        print("Printing model: " + current_design)
+        completed_models.append(current_design)
+
+def show_completed_models(completed_models):
+    print("\nFollowing models have been printed:")
+    for completed_model in completed_models:
+        print(completed_model)
+
+unprinted_designs = ['iphone case', 'robot pendant', 'dodecahedron']
+completed_models = []
+
+print_models(unprinted_designs, completed_models)
+show_completed_models(completed_models)
+'''
+<결과>
+Printing model: dodecahedron
+Printing model: robot pendant
+Printing model: iphone case
+
+Following models have been printed:
+dodecahedron
+robot pendant
+iphone case
+<설명>
+unprinted_designs list 에 담긴 원소를 뒤에서부터 꺼내서 출력하고, unprinted_designs 는 빈 list가 된다.
+꺼낸 순서대로 completed_models list 에 담아서 다시 출력하면 아까 출력된 순서와 동일하게 출력된다.
+'''
+
+
+#17-B-5
+def make_pizza(size, *toppings):
+    print("\nMaking a " + str(size) +
+          "-inch pizza with the following toppings:")
+    for topping in toppings:
+        print("- " + topping)
+make_pizza(16, 'pepperoni')
+make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+
+'''
+<결과>
+
+Making a 16-inch pizza with the following toppings:
+- pepperoni
+
+Making a 12-inch pizza with the following toppings:
+- mushrooms
+- green peppers
+- extra cheese
+
+<설명>
+size 라는 숫자와 toppings 라는 list 를 입력받아서 순서대로 출력한다.
+'''
+
+#17-B-6. Functions[6/7]
+def build_profile(first, last, **user_info):
+    profile = {}
+    profile['first_name'] = first
+    profile['last_name'] = last
+    for key, value in user_info.items():
+        profile[key] = value
+    return profile
+
+user_profile = build_profile('albert', 'einstein',
+                             location='princeton',
+                             field='physics')
+print(user_profile)
+
+'''
+<결과>
+{'first_name': 'albert', 'last_name': 'einstein', 'location': 'princeton', 'field': 'physics'}
+<설명>
+사전을 반환하는데, first_name key에 first 입력, last_name key 에 last 를 저장하고,
+user_info 라는 사전을 입력하면 그 내용까지 추가 해서 반환한다.  
+'''
+
+#17-B-7. Functinos[7/7]
+def make_pizza(size, *toppings):
+    print("\nMaking a " + str(size) +
+          "-inch pizza with the following toppings:")
+    for topping in toppings:
+        print("- " + topping)
+
+import pizza as p
+p.make_pizza(16, 'pepperoni')
+p.make_pizza(12, 'mushrooms', 'green peppers', 'extra cheese')
+
+'''
+<결과>
+
+Making a 16-inch pizza with the following toppings:
+- pepperoni
+
+Making a 12-inch pizza with the following toppings:
+- mushrooms
+- green peppers
+- extra cheese
+
+<설명>
+코드 내용은 앞서 설명한 make_pizza 와 동일하지만,
+외부의 pizza.py 에 정의된 make_pizza() 를 호출한다.
+'''
+
+#17-B-8. Class Code[1/7]
+class Dog():
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def sit(self):
+        print(self.name.title() + " is now sitting.")
+    def roll_over(self):
+        print(self.name.title() + " rolled over!")
+
+my_dog = Dog('willie', 6)
+your_dog = Dog('lucy', 3)
+
+print("My dog's name is " + my_dog.name.title() + ".")
+print("My dog is " + str(my_dog.age) + " years old.")
+my_dog.sit()
+print("\nMy dog's name is " + your_dog.name.title() + ".")
+print("My dog is " + str(your_dog.age) + " years old.")
+your_dog.sit()
+'''
+<결과>
+My dog's name is Willie.
+My dog is 6 years old.
+Willie is now sitting.
+
+My dog's name is Lucy.
+My dog is 3 years old.
+Lucy is now sitting.
+
+<설명>
+my_dog 와 your_dog 라는 Dog type 객체를 2개 생성하고,
+생성자에서 이름과 나이를 입력받아서 초기화 한 뒤에,
+초기화 값을 확인하기 위해 멤버변수 를 출력하고,
+class 에서 정의된 sit() 메소드를 수행하였다.
+'''
+
+#17-B-9. Class Code[2/7]
+class Car():
+    def __init__(self, manufacturer, model, year):
+        self.manufacturer = manufacturer
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0
+    def get_descriptive_name(self):
+        long_name = str(self.year) + ' ' + self.manufacturer + ' ' + self.model
+        return long_name.title()
+    def read_odometer(self):
+        print("This car has " + str(self.odometer_reading) + " miles on it.")
+    def update_odometer(self, mileage):
+        if mileage >= self.odometer_reading:
+            self.odometer_reading = mileage
+        else:
+            print("You can't roll back an odometer!")
+    def increment_odometer(self, miles):
+        self.odometer_reading += miles
+
+#17-B. Class Code[3/7]
+
+my_used_car = Car('subaru', 'outback', 2013)
+print(my_used_car.get_descriptive_name())
+
+my_used_car.update_odometer(23500)
+my_used_car.read_odometer()
+
+my_used_car.increment_odometer(100)
+my_used_car.read_odometer()
+
+'''
+<결과>
+2013 Subaru Outback
+This car has 23500 miles on it.
+This car has 23600 miles on it.
+<설명>
+my_used_car 라는 Car 의 객체를 생성하고, 이름을 출력한뒤에
+my_used_car 의 odometer_reading 변수를 23500 으로 지정하고 출력.
+my_used_car 의 odometer_reading 변수를 100 감소시키고 출력.
+'''
+
+#17-B. Class Code[4/7]
+from car import Car
+
+class Battery():
+    def __init__(self, battery_size=60):
+        self.battery_size = battery_size
+    def describe_battery(self):
+        print("This car has a " + str(self.battery_size) + "-kWh battery.")
+    def get_range(self):
+        if self.battery_size == 60:
+            range = 140
+        elif self.battery_size == 85:
+            range = 185
+        message = "This car can go approximately " + str(range)
+        message += " miles on a full charge."
+        print(message)
+
+class ElectricCar(Car):
+    def __init__(self, manufacturer, model, year):
+        super().__init__(manufacturer, model, year)
+        self.battery = Battery()
+
+my_tesla = ElectricCar('tesla', 'model s', 2016)
+print(my_tesla.get_descriptive_name())
+my_tesla.battery.describe_battery()
+
+'''
+<결과>
+2016 Tesla Model S
+This car has a 60-kWh battery.
+<설명>
+my_tesla 는 ElectricCar 의 객체이며 Car 를 상속받는다. (Car 는 car.py 내에 존재한다.)
+my_tesla 는 ElectricCar 의 생성자에서 호출한, 상속받은 Car 의 생성자에 의해
+제조사, 모델, 연식을 입력받아서 멤버변수를 업데이트 하고,
+이후 Battery 의 객체를 생성하여, 멤버변수로 등록한다.
+ElectricCar 는 Battery 를 상속받지 않았으나, my_tesla.battery.describe_battery() 에 의해
+참조되어 수행할 수 있다.
+'''
+
+#17-B. Class Code[6/7]
+from car import Car
+my_new_car = Car('audi', 'a4', 2015)
+print(my_new_car.get_descriptive_name())
+my_new_car.odometer_reading = 23
+my_new_car.read_odometer()
+
+'''
+<결과>
+2015 Audi A4
+This car has 23 miles on it.
+<설명>
+Car class 는 car.py 에서 참조한다.
+my_new_car 는 기존의 Car 에 의해 생성되는 객체이다.
+기존 코드와 동일하다.
+'''
+
+from car import Car
+from electric_car import ElectricCar
+my_beetle = Car('volkswagen', 'beetle', 2015)
+print(my_beetle.get_descriptive_name())
+my_tesla = ElectricCar('tesla', 'roadster', 2015)
+print(my_tesla.get_descriptive_name())
+'''
+<결과>
+2015 Volkswagen Beetle
+2015 Tesla Roadster
+<설명>
+car.py 에서 Car 클래스를, electric_car.py 에서 ElectricCar 클래스를 참조한다.
+my_beetle 이라는 Car의 객체를 생성하고,
+my_tesla 라는 ElectricCar 객체를 생성한다. (ElectricCar 는 Car를 상속 받는다.)
+'''
+
+#17-B. Class Code[7/7]
+from collections import OrderedDict
+favorite_languages = OrderedDict()
+favorite_languages['jen'] = 'python'
+favorite_languages['sarah'] = 'c'
+favorite_languages['edward'] = 'ruby'
+favorite_languages['phil'] = 'python'
+
+for name, language in favorite_languages.items():
+    print(name.title() + "'s favorite language is " +
+          language.title() + ".")
+
+'''
+<결과>
+Jen's favorite language is Python.
+Sarah's favorite language is C.
+Edward's favorite language is Ruby.
+Phil's favorite language is Python.
+<설명>
+내장된 라이브러리 collections 의 OrderedDict 를 참조한다.
+OrderedDict 는 입력된 순서를 기억하고 있다.
+for loop 구문으로 items() 에 의해 반환된 key, value 쌍을
+이름의 첫글자를 대문자로 처리하고, 주어진 문자열에 대입하여 출력한다.
+'''
