@@ -1,56 +1,71 @@
-import def_a as s1
-import def_b as s2
-import sys, filecmp
-from inspect import getmembers, isfunction
 
-def run(func, log_file):
-    o = sys.stdout
-    sys.stdout = open(log_file, 'w')
-    r = func()
-    sys.stdout = o
-    return r
+#22-A-1. Parenthesis Matching using Python
+# Version-1. user define
+def printMatchedPairs_self(s):
+    stack = []
+    result = []
+    for i, c in enumerate(s):
+        if c == '(':
+            stack.append(i)
+        elif c == ')':
+            try:
+                result.append('(%d,%d)' % (stack.pop(), i))
+            except IndexError:
+                print('Stack was empty, no match exists')
+    print(', '.join(result))
+    while stack:
+        print('No match for left parenthesis at', stack.pop())
+
+# Version-2. import module
+import queue
+def printMatchedPairs_import(s):
+    stack = queue.LifoQueue(len(s))
+    result = []
+    for i, c in enumerate(s):
+        if c == '(':
+            stack.put(i)
+        elif c == ')':
+            if stack.qsize():
+                result.append('(%d,%d)' % (stack.get(), i))
+            else:
+                print('Stack was empty, no match exists')
+    print(', '.join(result))
+    while stack.qsize():
+        print('No match for left parenthesis at', stack.get())
+
+# TEST
 '''
-m1, m2 = getmembers(s1), getmembers(s2)
-if len(m1) != len(m2):
-    print('[ERROR] function count = %d, %d' % (len(m1), len(m2)))
-    sys.exit()
-
-for f1, f2 in zip(m1, m2):
-    if isfunction(f1[1]):
-        log1, log2 = '{}_ans1.txt'.format(f1[0]), '{}_ans2.txt'.format(f2[0])
-        r1 = run(f1[1], log1)
-        r2 = run(f2[1], log2)
-        if r1 != r2:
-            print('[FAIL] {}'.format(f1[0]))
-            print('>>>{}'.format(r1))
-            print('>>>{}'.format(r2))
-        print(r1,r2)
-        
-        if filecmp.cmp(log1, log2):
-            print('cmp pass!', log1, log2)
-            print('{}'.format(open(log1).read()))
-            print('{}'.format(open(log2).read()))
-        else:
-            print('[FAIL] {}'.format(f1[0]))
-            print('>>>{}'.format(open(log1).read()))
-            print('>>>{}'.format(open(log2).read()))
+strings = ['(a*(b+c)+d)', '(a*(b+c+d)', '(a*b+c)+d)', '(a*(((b+c)+d)']
+for s in strings:
+    print('self:')
+    printMatchedPairs_self(s)
+    print('import:')
+    printMatchedPairs_import(s)
+    print()
 '''
 
+#22-A-2. Tower of Hanoi using Python
+def printTower(x,y,z):
+    height = sum(map(len, [x,y,z]))-1
+    for i in range(height,-1,-1):
+        for l in [x,y,z]:
+            if len(l) > i:
+                print('[%d]   '%l[i], end='')
+            else:
+                print('      ',end='')
+        print()
+    print('-----------------')
 
-import random
-def gen_list(nth, mx_r=1000, mx_c=1000, mx_var=100000):
-    r, c = random.randint(0, mx_r), random.randint(0,mx_c)
-    return [[random.randint(0, mx_var)]* for _ in range(mx_r)]            
+def towersOfHanoi(n, x, y, z):
+    if n > 0:
+        towersOfHanoi(n-1, x, z, y)
+        y.append(x.pop())
+        printTower(x0,y0,z0)
+        towersOfHanoi(n-1, z, y, x)
 
-print(gen_list(1,4,4))
-
-            
-
-
-
-
-
-
-
-
+x0 = list(range(4,0,-1))
+y0 = []
+z0 = []
+printTower(x0,y0,z0)
+towersOfHanoi(4, x0, y0, z0)
 
