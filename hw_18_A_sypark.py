@@ -6,22 +6,24 @@ class Point:
 
 class Pythagoras :
     def __init__(self):
-        self.point_one = []
-        self.point_two = []
+        self.point_one = Point(None, None)
+        self.point_two = Point(None, None)
     
     def setPointOne(self, P) :
-        self.point_one.append(P.x)
-        self.point_one.append(P.y)
+        self.point_one.x = P.x
+        self.point_one.y = P.y
     
     def setPointTwo(self, P) :
-        self.point_two.append(P.x)
-        self.point_two.append(P.y)
+        self.point_two.x = P.x
+        self.point_two.y = P.y
     
     def getSlope(self):
-        return (self.point_two[1]-self.point_one[1])/(self.point_two[0]-self.point_one[0])
+        return (self.point_two.y-self.point_one.y)/(self.point_two.x-self.point_one.x)
     
     def getDistance(self):
-        return((self.point_two[1]-self.point_one[1])**2+(self.point_two[0]-self.point_one[0])**2)**0.5
+        return((self.point_two.y-self.point_one.y)**2+(self.point_two.x-self.point_one.x)**2)**0.5
+
+
 '''
 def main():
     PPP = Pythagoras()
