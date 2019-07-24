@@ -1,6 +1,11 @@
 
 #22-A-1. Parenthesis Matching using Python
 # Version-1. user define
+'''
+괄호 매칭에 성공한 경우는 리스트에 저장했다가 마지막에 출력,
+스택이 없는 상태로 괄호 닫는 경우 발생하면 바로 empty 출력.
+마지막에 스택이 남아있는 경우 괄호 열고 끝나는 경우이므로 no match 출력.
+'''
 def printMatchedPairs_self(s):
     stack = []
     result = []
