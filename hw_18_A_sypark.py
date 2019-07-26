@@ -240,7 +240,7 @@ class Student(Person) :
     def getDepart(self):
         return self.Depart
 
-'''def main():
+def main_p_s():
     P1 = Professor("Tim Cook", "Soft Arch", 5500, "CSE")
     print(5*P1.Salary)
 
@@ -248,8 +248,8 @@ class Student(Person) :
     for i in range(5) :
         tot += P1.raiseSalary(15)
     print(tot)
-main()
-'''
+#main_p_s()
+
 
 #Advanced OOP(6) : Staff and Student
 class Person:
@@ -291,8 +291,8 @@ class Student(Person):
         else : return False
     def willGraduateNextYear(self):
         if self.year == 4 : return True
-'''
-def main():
+
+def main_s_s():
     Tom = Staff("Tom", "Gangnam", "Yonsei", 350000)
     Dane = Staff("Dane", "Shindorim", "Sogang", 20000)
     
@@ -307,5 +307,5 @@ def main():
         print("Tom has a larger monthly pay")
     else:
         print("Dane has a larger monthly pay")
-main()
-'''
+#main_s_s()
+
