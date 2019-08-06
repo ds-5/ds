@@ -11,9 +11,6 @@ df_clubs = sql.read_sql_query("""
 # 전체 클럽 중에서 Top 10 클럽을 추출한다.
 df_clubs10 = df_clubgoals.head(10)
 
-# Column 이름을 수정한다.
-df_club10 = df_clubs10.rename( columns = { "playing_club":"club_name", "count(*)":"goals" })
-
 # Top 10 클럽의 순위를 Bar chart로 표시한다.
 import matplotlib.pyplot as plt
 
