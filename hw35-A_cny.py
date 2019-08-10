@@ -176,3 +176,66 @@ sns.kdeplot( scaled['x3'], ax = ax3 )
 plt.show()
 
 # Pracice 2 ======================================================================================================================
+
+import pandas as pd
+from sklearn import datasets
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+
+data = datasets.load_boston()
+dfX = pd.DataFrame( data.data, columns=data.feature_names )
+dfX = dfX.drop( ['CHAS', 'RAD'], axis=1 )
+dfY = pd.DataFrame( data.target, columns=['MEDV'])
+regr = LinearRegression()
+
+#TODO ++++
+_, axes = plt.subplots( 11, 1, figsize = (5, 26) )
+for i, ax in enumerate(axes):
+    sns.kdeplot( dfX.iloc[:,i], ax=ax)
+    
+plt.show()
+
+dfX.LSTAT = np.log( dfX.LSTAT )
+dfX.DIS = np.log( dfX.DIS )
+#TODO ----
+
+n= 1000
+avg = 0
+for i in range(n):
+    X_train, X_test, y_train, y_test = train_test_split( dfX, dfY, train_size = 0.7 )
+    regr.fit( X_train, y_train )
+    avg += regr.score( X_test, y_test )
+avg/n
+
+# Pracice 3 ======================================================================================================================
+
+df = pd.read_csv( '35-data-Data_Prep.csv.txt', index_col=0)
+df_ = df.drop( ['iduser', 'mdutype', 'group'], axis = 1)
+scaler = [ preprocessing.StandardScaler() for i in df_.columns ]
+
+def std_based_outlier(df):
+    s = set()
+    for colname in df.colums:
+    #?? outlier = np.abs( df[colname][df[colname].notnull()] - df[colname][df[colname].notnull()] )
+        s.update( outlier[outlier==True].index.tolist())
+    df = df.iloc[ list( set( range( len(df))).differences(s))]
+    return df
+
+def outliers_iqr(ys):
+    quartile_1, quartile_3 = np.nanpercentile( ys, [25,75])
+    iqr = quartile_3 - quartile_1
+    lower_bound = quartile_1 - (iqr * 1.5 )
+    upper_bound = quartile_3 - (iqr * 1.5 )
+    return np.where( (ys > upper_bound) | (ys<lower_bound) )
+
+_, axes = plt.subpolt(19, 1, figsize = (5, 50))
+
+for i, ax in enumerate(axes):
+    colname = df_.columns[i]
+    col = df_[colname][df_[colname].notnull()]
+    col = col.values.reshape(col.shape[0], 1)
+    scaler[i].fit(col)
+    sns.kdeplot( scaler[i].transform(col).reshape(-1), ax = ax, label=colname )
+    
+df_ = std_based_outlier(df_)
+df_.info()    
