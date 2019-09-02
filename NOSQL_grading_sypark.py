@@ -8,7 +8,8 @@ import os
 def pagination():
     # TODO:
     # problem A
-    result = db.grades.find({'sid':{'$gte':10}},{'_id':0, 'note':0}).sort([('sid',1)]).limit(10)
+    # result = db.grades.find({'sid':{'$gte':10}},{'_id':0, 'note':0}).sort([('sid',1)]).limit(10)
+    result = db.grades.find({},{'_id':0, 'note':0}).sort([('sid',1)]).limit(10).skip(10)
 
     for item in result:
         print('{ ', end='')
